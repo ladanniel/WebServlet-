@@ -1,0 +1,51 @@
+HTTP协议 超文本传输协议
+
+HTTP协议是应用层协议，底层要求的传输协议必须是可靠的传输协议，通常是TCP协议
+HTTP协议规定客户端与服务端之间的通讯方式为一次请求一次响应。即：
+客户端发起连接，并向服务端发送一个标准的HTTP请求，而后服务端处理该请求后给与回应一个标准的HTTP响应
+所以对于HTTP协议而言，服务端永远不会主动响应客户端。
+
+HTTP协议现在常用的是HTTP1.1版本协议。
+在HTTP1.0版本时（短连接模式）（微信等是长连接模式），要求一次会话只完成一次请求与响应。即：
+客户端与服务端建立TCP连接后，发送一次请求，当服务端予以响应后即断开连接。
+
+在HTTP1.1版本中，一个较大的改动就是在一次会话中可以完成多次请求与响应。
+
+
+HTTP协议中规定的请求与响应的内容大致部分是文本数据。
+但是这些字符只能是ISO88590-1编码中出现的字符，这意味着在HTTP协议内容中是不能直接出现中文等字符的；
+
+HTTP协议中的请求定义：Request
+一个请求通常包含三个部分：请求行，消息头，消息正文
+  1：请求行：
+请求行的格式为：Method url Protocol（CRLF）
+请求方式 ：(Request method)
+请求的资源路径(Request url)
+请求协议版本；(Request Protocol)
+例如：
+GET / index.htlm  HTTP/1.1
+  
+  2：消息头：(Request Headers)
+消息头是客户端发起请求是传递过来的一些附加信息，比如描述了客户端是谁，以及希望与服务端如何通讯，描述
+消息正文的长度以及内容类型等信息
+格式：
+name：value（CRLF）
+
+当所有消息头全部发送完毕后会单独发送一个CRLF。
+例如：
+GET /favicon.ico HTTP/1.1（CRLF）
+Host: localhost:8080(告诉浏览器请求地址)（CRLF）
+Connection: keep-alive（CRLF）
+（我是谁）User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36（CRLF）
+Accept-Encoding: gzip, deflate, sdch, br（CRLF）
+Accept-Language: zh-CN,zh;q=0.8（CRLF）
+Cookie: __guid=111872281.26833145324197580.1519462519138.4556（CRLF）（CRLF）
+ 不是所有的请求都有消息正文内容的(例如：超链接) 
+  3：消息正文
+  消息正文：是2进制数据，内容是用户实际要向服务端传递的数据。它可能是用户传递的注册用户的信息，上传的附件
+  内容等
+  一个请求中可以不含有消息正文部分；
+  请求是否含有消息正文的一个重要的“标志”是该请求的消息头中是否含有一下两个头：
+  Content-Type：用于说明消息正文的内容是-什么类型数据；例如：text/html
+  Content-Length：用于说明消息正文的数据长度（字节量）；
+  

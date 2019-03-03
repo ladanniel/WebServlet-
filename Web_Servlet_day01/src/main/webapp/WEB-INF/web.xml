@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>Web_Servlet_day01</display-name>
+	<servlet>
+		<servlet-name>helloServlet</servlet-name>
+		<!-- 要写完整的类名，servlet容器会利用java反射机制来依据类名找到类的字节码文件，然后完成类的加载和实例化/ 包名+类名=完整的类名 -->
+		<servlet-class>cn.tedu.web.servlet.hellowservlet.HelloServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>helloServlet</servlet-name>
+		<!-- 告诉容器 请求路径与serverlet的对应关系 注：servlet 的请求路径规则如下： http://ip:port/Web_Servlet_day01/hello -->
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+</web-app>
+

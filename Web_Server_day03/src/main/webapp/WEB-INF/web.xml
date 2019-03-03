@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>Werb_Server_day03</display-name>
+  <servlet>
+    <servlet-name>AddUserSelvet</servlet-name>
+    <servlet-class>cn.tedu.web.servlet.user1.AddUserSelvet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddUserSelvet</servlet-name>
+    <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ListUserServlet</servlet-name>
+    <servlet-class>cn.tedu.web.servlet.user1.ListUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListUserServlet</servlet-name>
+    <url-pattern>/list</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Delete</servlet-name>
+    <servlet-class>cn.tedu.web.servlet.user1.Delete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Delete</servlet-name>
+    <url-pattern>/del</url-pattern>
+  </servlet-mapping>
+</web-app>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+   <style type="text/css">
+          h1{
+	            margin: 80px 0px 0px 680px;
+	            font-style:normal;
+	            font-size: 120%;     
+}
+         table {
+               margin:0 auto;
+	           text-align: center;
+	           background-color: gray;
+	           /* 合并单元格  */
+	           border-collapse:collapse;
+	           border: 8 solid red;
+	           
+}
+        #id{
+            border-radius: 4px;
+            background-color: green;
+         }
+   
+   </style>
+</head>
+<body>
+      <h1>UserManagerSystem</h1>
+      <form action="AddUserServlet" method="get">
+                 <table border="1"> 
+                      <tr>
+                          <td align="right">用户名：</td>
+                          <td><input name="username" type="text" size="36"></td>
+                      </tr>
+                       <tr>
+                          <td align="right">密  码：</td>
+                          <td><input name="password" type="password" size="36"></td>
+                      </tr>
+                       <tr>
+                          <td align="right">邮  箱：</td>
+                          <td><input name="email" type="text" size="36"></td>
+                      </tr>
+                       <tr>
+                          <td colspan="2"><input id="in" type="submit" value="确认提交"></td>
+                      </tr>
+                 </table>
+      </form>
+
+</body>
+</html>

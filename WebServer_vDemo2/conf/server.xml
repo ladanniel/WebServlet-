@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+       <servlets>
+                 <servlet url="webapps/myweb/reg" className="com.tedu.webserver.servlet.RegServlet"/> 
+                 
+                 <servlet url="/myweb/login" className="com.tedu.webserver.servlet.LoginServlet"/>      
+       </servlets>
+</config>

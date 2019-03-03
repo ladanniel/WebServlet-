@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 自定义标签方法 -->
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+    version="2.1">
+   
+  <tlib-version>1.1</tlib-version>
+  <short-name>d</short-name>
+  <uri>test</uri>
+  
+  <tag>
+    <name>hello</name>
+    <tag-class>test.dateTag</tag-class>
+    <!-- bo
+    
+    dy-content:用于设置标签体的内容
+        empty：表示该标签没有标签体
+        scriptless:表示该表有标签体，但是标签体的内容不能够出现java代码（<%jsp片段%><%=jsp表达式%><%!jsp声明%>）
+        JSP:该标签有标签体，并且标签体的内容可以是java代码，但是只有复杂标签技术菜支持该值
+                   简单的标签：不能使用JSP
+     -->
+    <body-content>empty</body-content>
+    <attribute>
+  <!-- <description>
+                   这是标签的注释说明
+        </description> -->      
+        <name>info</name>
+        <!-- 如果值为true，表示该属性是必须要赋值的 -->
+        <required>false</required>
+        <!-- 如果值为true，表示该属性可以动态赋值，即：可以使用el表达式来赋值 -->
+        <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+    <name>qty</name>
+    <required>false</required>
+    <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+</taglib>
